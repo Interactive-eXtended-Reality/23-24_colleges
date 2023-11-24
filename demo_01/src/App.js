@@ -1,11 +1,31 @@
+import dataStudents from './data/students.json';
+
+import DigitalClock from './components/DigitalClock';
+import TodoList from './components/TodoList';
+import StudentList from './components/StudentList';
+
+// Styling
 import './App.css';
 
+
+// Data
 const keywords = [
   'JavaScript',
   'Python',
   'C#',
   'Java',
 ];
+
+const dataTodos1 = ['pizza', 'kidibul', 'duvel', 'kaasblokjes'];
+const dataTodos2 = ['sla', 'tomaat', 'spruiten', 'pastinaak', 'plat water'];
+
+
+
+const Message = ({ msg }) => {
+  return (
+    <p>{msg}</p>
+  )
+};
 
 function App() {
   const firstName = 'Luke';
@@ -35,6 +55,8 @@ function App() {
 
   return (
     <div className="app">
+      <DigitalClock />
+      <DigitalClock />
       <h1>Hello World</h1>
       <p>Hello, {firstName}</p>
       <p>Hello, {user.nickName}. Your hair color is {user.hairColor}.</p>
@@ -44,8 +66,16 @@ function App() {
       </ul>
       <div>{generateJSXForHeader()}</div>
       <ul>
-        {keywords.map(keyword => <li>{keyword}</li>)}
+        {keywords.map((keyword, index) => <li key={index}>{keyword}</li>)}
       </ul>
+      <Message msg={`Greetings Weirdo's`} />
+      <Message msg={`Greetings Barbies`} />
+      <Message msg={`Greetings Napoleons`} />
+      <Message msg={`Greetings Newbies`} />
+      <TodoList data={dataTodos1} />
+      <TodoList data={dataTodos2}/>
+      <StudentList data={dataStudents} />
+      
     </div>
   );
 }
