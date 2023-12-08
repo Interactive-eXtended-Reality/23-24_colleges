@@ -13,7 +13,7 @@ export default function Navigation () {
         <li>
           <a href="/">Blog</a>
         </li>
-
+        <li>
           <a href="/">About Us</a>
         </li>
         <li>
